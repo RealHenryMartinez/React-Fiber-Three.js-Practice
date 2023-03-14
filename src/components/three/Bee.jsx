@@ -8,7 +8,9 @@ import { useGLTF } from '@react-three/drei'
 import { angleToRadians } from '../../utils/angle'
 
 export function Bee() {
+  // referencing the model to reference after each render
   const group = useRef()
+  // reference the nodes and materials (surface) from the glb file containing the binary file
   const { nodes, materials } = useGLTF('/models/bee/bee.glb')
   return (
     <group ref={group} dispose={null} scale={1} rotation={[0, angleToRadians(-35), 0]}>
